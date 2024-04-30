@@ -11,7 +11,13 @@ export const OrderRepository = () => {
     });
   };
 
+  const fetchGetOrders = async () => {
+    const response = await fetch("http://localhost:8000/api/orders");
+    return response.json();
+  };
+
   return {
     fetchCreateOrder,
+    fetchGetOrders,
   };
 };
